@@ -1,0 +1,7 @@
+{
+  "name": "water",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
