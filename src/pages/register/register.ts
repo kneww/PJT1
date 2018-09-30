@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
-import { SN1 } from '../sn1/sn1';
 
 /**
- * Generated class for the P2Page page.
+ * Generated class for the RegisterPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -12,18 +11,19 @@ import { SN1 } from '../sn1/sn1';
 
 @IonicPage()
 @Component({
-  selector: 'page-p2',
-  templateUrl: 'p2.html',
+  selector: 'page-register',
+  templateUrl: 'register.html',
 })
-export class P2Page {
+export class RegisterPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad P2Page');
+    console.log('ionViewDidLoad RegisterPage');
   }
-  backhomee(){
-    this.navCtrl.push(SN1);
+  backhome(){
+    this.navCtrl.push(HomePage);
+  
   }
 }

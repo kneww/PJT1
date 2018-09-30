@@ -18,36 +18,39 @@
         <ion-input placeholder="ชื่อจริง"></ion-input>
         <ion-input placeholder="นามสกุล"></ion-input>
       </ion-item>
-      <ion-item >
-          <div class = "list">
-              <label class = "item item-radio">
-                 <input type = "radio" name = "group1" />
-                 <div class = "item-content">
-                    ชาย
-                 </div>
-                 <i class = "radio-icon ion-checkmark"></i>
-              </label>
-           
-              <label class = "item item-radio">
-                 <input type = "radio" name = "group1" />
-                 <div class = "item-content">
-                  หญิง
-                 </div>
-                 <i class = "radio-icon ion-checkmark"></i>
-              </label>
-           
-            </div>
+      
+      <ion-item>
+        <ion-label>เพศ</ion-label>
+        <ion-select [(ngModel)]="gaming">
+          <ion-option value="nes">ชาย</ion-option>
+          <ion-option value="n64">หญิง</ion-option>
+        </ion-select>
       </ion-item>
-      <ion-item >
+      
+      <ion-item>
           <ion-input placeholder="น้ำหนัก"></ion-input>
-          <ion-input placeholder="ส่วนสูง"></ion-input>
-          <ion-input placeholder="อายุ"></ion-input>
         </ion-item>
-        <ion-item >
+
+        <ion-item>
+            <ion-input placeholder="ส่วนสูง"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-input placeholder="อายุ"></ion-input>
+        </ion-item>
+
+        <ion-item>
             <ion-input placeholder="ประวัติอาการแพ้"></ion-input>
-            <ion-input placeholder="โรคประจำตัว"></ion-input>
-            <ion-input placeholder="หมอประจำตัว"></ion-input>
           </ion-item>
+          
+        <ion-item>
+            <ion-input placeholder="โรคประจำตัว"></ion-input>
+          </ion-item>
+
+        <ion-item>
+            <ion-input placeholder="หมอประจำตัว"></ion-input>
+        </ion-item>
+
           <button ion-button round (click)="goHome()" icon-start>
               <ion-icon>  </ion-icon>  บันทึก
             </button>

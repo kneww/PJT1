@@ -17,17 +17,30 @@
         <ion-row>
           <ion-col col-md-6 push-md-3>
               <div (click)="info()">
-                  <img src="../../assets/imgs/info.png" style="height: 100px;width: 100px" />
+                  <img src="../../assets/imgs/person.png" style="height: 100px;width: 100px" />
+                  <ion-item>
+                    <ion-label>ข้อมูลส่วนตัว</ion-label>
+                    
+                  </ion-item>
                 </div>
           </ion-col>
           <ion-col col-md-3 push-md-3>
               <div (click)="p2()">
                   <img src="../../assets/imgs/note.jpg" style="height: 100px;width: 100px" />
+                  <ion-item>
+                    <ion-label>ระยะอาการ</ion-label>
+                    
+                  </ion-item>
+                  
                 </div>
           </ion-col>
           <ion-col col-md-3 pull-md-3>
-              <div >
+              <div (click)="ma()" >
                   <img src="../../assets/imgs/map.png" style="height: 100px;width: 100px" />
+                  <ion-item>
+                    <ion-label>พิกัด</ion-label>
+                    
+                  </ion-item>
                 </div>
           </ion-col>
         </ion-row>
@@ -35,16 +48,28 @@
             <ion-col col-md-6 push-md-3>
                 <div (click)="p3()">
                     <img src="../../assets/imgs/pill.png" style="height: 100px;width: 100px" />
+                    <ion-item>
+                      <ion-label>เวลาทานยา</ion-label>
+                      
+                    </ion-item>
                   </div>
             </ion-col>
             <ion-col col-md-3 push-md-3>
                 <div (click)="p5()">
                     <img src="../../assets/imgs/book.png" style="height: 100px;width: 100px" />
+                    <ion-item>
+                      <ion-label>บทความรู้</ion-label>
+                      
+                    </ion-item>
                   </div>
             </ion-col>
             <ion-col col-md-3 pull-md-3>
                 <div (click)="p4()">
                     <img src="../../assets/imgs/doc.jpg" style="height: 100px;width: 100px" />
+                    <ion-item>
+                      <ion-label>เวลานัดหมอ</ion-label>
+                      
+                    </ion-item>
                   </div>
             </ion-col>
           </ion-row>
@@ -52,17 +77,29 @@
               <ion-col col-md-6 push-md-3>
                   <div (click)="p6()">
                       <img src="../../assets/imgs/sr.png" style="height: 100px;width: 100px" />
+                      <ion-item>
+                        <ion-label>กระทู้</ion-label>
+                        
+                      </ion-item>
                     </div>
 
               </ion-col>
               <ion-col col-md-3 push-md-3>
                   <div (click)="p8()">
                       <img src="../../assets/imgs/phone.png" style="height: 100px;width: 100px" />
+                      <ion-item>
+                        <ion-label>เบอร์ฉุกเฉิน</ion-label>
+                        
+                      </ion-item>
                     </div>
               </ion-col>
               <ion-col col-md-3 pull-md-3>
                   <div (click)="p7()">
                       <img src="../../assets/imgs/game.png" style="height: 100px;width: 100px" />
+                      <ion-item>
+                        <ion-label>เกมส์</ion-label>
+                        
+                      </ion-item>
                     </div>
               </ion-col>
             </ion-row>
@@ -80,7 +117,7 @@
             <ion-icon >  </ion-icon>  LOGOUT
           </button>
         </ion-col>
-        <ion-col col-1>
+        <ion-col col-3>
 
         </ion-col>
         

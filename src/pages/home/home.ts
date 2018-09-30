@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {IonicPage, NavController, NavParams, MenuController,ModalController,LoadingController } from 'ionic-angular';
 import { SN1 } from '../sn1/sn1'
+import { RegisterPage } from '../register/register';
 
 /**
  * Generated class for the HomePage page.
@@ -21,7 +22,7 @@ export class HomePage {
   }
   
     
-  generateSN1(){
+  go(){
     this.navCtrl.push(SN1);
   }
   openModal(){
@@ -32,11 +33,18 @@ export class HomePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
   }
+  goToPrePlay(){
+    
+  }
   presentLoading() {
     const loader = this.loadingCtrl.create({
       content: "กรุณารอสักครู่....",
       duration: 3000
     });
     loader.present();
+  }
+  nextregister(){
+    this.navCtrl.push(RegisterPage);
+
   }
 }
