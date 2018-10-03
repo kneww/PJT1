@@ -10,7 +10,7 @@ import { P5Page } from '../p5/p5';
 import { P6Page } from '../p6/p6';
 import { P8Page } from '../p8/p8';
 import { P7Page } from '../p7/p7';
-import { MappPage } from '../mapp/mapp';
+import { MapPage } from '../map/map';
 @Component({
   selector: 'page-sn1',
   templateUrl: 'sn1.html'
@@ -91,7 +91,7 @@ export class SN1 {
     this.navCtrl.push(P8Page);
   }
  ma(){
-   this.navCtrl.push(MappPage);
+   this.navCtrl.push(MapPage);
  }
 
 }

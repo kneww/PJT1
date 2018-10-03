@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SN1 } from '../sn1/sn1';
 
 /**
  * Generated class for the P4Page page.
@@ -21,5 +22,7 @@ export class P4Page {
   ionViewDidLoad() {
     console.log('ionViewDidLoad P4Page');
   }
-
+  backhomee(){
+    this.navCtrl.push(SN1);
+  }
 }
