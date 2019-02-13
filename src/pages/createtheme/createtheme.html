@@ -17,8 +17,8 @@
   <ion-list inset>
 
     <ion-item>
-      <ion-label>หัวข้อเรื่อง</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-label>หัวข้อเรื่อง :</ion-label>
+      <ion-input [(ngModel)]="userData.post_topic" type="text"></ion-input>
     </ion-item>
     </ion-list>
 
@@ -29,7 +29,7 @@
     
       <ion-item>
         <ion-label>สาธารณะ</ion-label>
-        <ion-radio checked="true" value="go"></ion-radio>
+        <ion-radio checked="true"></ion-radio>
       </ion-item>
     
       <ion-item>
@@ -40,8 +40,8 @@
       <ion-list>
 
         <ion-item>
-          <ion-label stacked>รายละเอียด</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-label stacked>รายละเอียด :</ion-label>
+          <ion-input [(ngModel)]="userData.post_detail" type="text"></ion-input>
         </ion-item>   
       </ion-list>
 

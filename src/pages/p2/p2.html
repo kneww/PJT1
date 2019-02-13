@@ -14,41 +14,43 @@
 
 
 <ion-content padding text-center>
-    <ion-item>
-        <ion-label>วันที่</ion-label>
-        <ion-datetime displayFormat="DD/MMM/YYYY" [(ngModel)]="myDate"></ion-datetime>
-      </ion-item>
 
     <ion-item>
-        <ion-label>เสียความทรงจำ</ion-label>
-        <ion-checkbox color="secondary" checked="false"></ion-checkbox>
+        <ion-label>วันที่</ion-label>
+        <ion-datetime displayFormat="DD/MMM/YYYY" [(ngModel)]="userData.data_dat"> </ion-datetime>
+      </ion-item>
+ 
+    <ion-item>
+        <ion-label>อาการปวดหัว</ion-label>
+        <ion-checkbox color="secondary" [(ngModel)]="userData.one"  checked="false"></ion-checkbox>
       </ion-item>
 
       <ion-item>
-          <ion-label>มีปัญหาในการให้เหตุผล หรือการแก้ไขปัญหา</ion-label>
-          <ion-checkbox color="secondary" checked="false"></ion-checkbox>
+          <ion-label>อาเจียน</ion-label>
+          <ion-checkbox color="secondary" [(ngModel)]="userData.two"   checked="false"></ion-checkbox>
         </ion-item>
         <ion-item>
             <ion-label>ก้าวร้าว ดุดัน</ion-label>
-            <ion-checkbox color="secondary" checked="false"></ion-checkbox>
+            <ion-checkbox color="secondary" [(ngModel)]="userData.tree"   checked="false"></ion-checkbox>
           </ion-item>
           <ion-item>
-              <ion-label>มีปัญหาในการสื่อสาร</ion-label>
-              <ion-checkbox color="secondary" checked="false"></ion-checkbox>
+              <ion-label>ลืมชื่อหรือลืมว่ากำลังทำอะไร</ion-label>
+              <ion-checkbox color="secondary" [(ngModel)]="userData.four"  checked="false"></ion-checkbox>
             </ion-item>
             <ion-item>
-                <ion-label>มีปัญหาในการทำสิ่งต่างๆเช่น ไม่สามารถจัดลำดับขั้นตอน</ion-label>
-                <ion-checkbox color="secondary" checked="false"></ion-checkbox>
+                <ion-label>นอนไม่หลับ</ion-label>
+                <ion-checkbox color="secondary" [(ngModel)]="userData.five"   checked="false"></ion-checkbox>
               </ion-item>
               <ion-item>
-                  <ion-label>มีปัญหาในการเคลื่อนไหวร่างกาย</ion-label>
-                  <ion-checkbox color="secondary" checked="false"></ion-checkbox>
+                  <ion-label>ปัสสาวะราด</ion-label>
+                  <ion-checkbox color="secondary" [(ngModel)]="userData.six"   checked="false"></ion-checkbox>
                 </ion-item>
                 <ion-item>
-                    <ion-label>มีความสับสนมึนงง</ion-label>
-                    <ion-checkbox color="secondary" checked="false"></ion-checkbox>
+                    <ion-label>ทำร้ายตนเองหรือผู้อื่น</ion-label>
+                    <ion-checkbox color="secondary" [(ngModel)]="userData.seven" checked="false"></ion-checkbox>
                   </ion-item>
-  <button ion-button color="secondary"> 
+                 
+  <button ion-button color="secondary" (click)="AddActivity()"> 
       บันทึกข้อมูล
 </button>
 <button ion-button color="danger" (click)="backhomee()">ยกเลิก</button>

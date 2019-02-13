@@ -19,23 +19,14 @@
 
 
 <ion-content padding text-center>
-    <ion-card>
-
-        <ion-item>
-          <ion-avatar item-start>
-            <img src="../../assets/imgs/person.png">
-          </ion-avatar>
-          <h2>มารี </h2>
-          <p>กันยายน 5, 1955</p>
-        </ion-item>
-      
-     
-      
-        <ion-card-content>
-          <p>แม่ของดิฉันมีอาการขี้ลืมมาก ตอนนี้พูดไม่ค่อยรู้เรื่อง </p>
-        </ion-card-content>
-
-        </ion-card>
+  <ion-card *ngFor="let xs of items">
+    <ion-card-header (click)="qa()" > หัวข้อ :
+     {{ xs.post_topic }}
+    </ion-card-header>
+    <ion-card-content> รายละเอียด :
+      {{ xs.post_detail }}
+    </ion-card-content>
+  </ion-card>
 
       
         <button ion-button  color="secondary" (click)="create()">สร้างกระทู้</button>

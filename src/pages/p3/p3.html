@@ -16,38 +16,35 @@
 <ion-content padding text-center>
     <ion-item>
         <ion-label>ประเภทยา</ion-label>
-        <ion-select [(ngModel)]="gaming">
-          <ion-option value="nes">ยาเม็ด</ion-option>
-          <ion-option value="n63">ยาน้ำ</ion-option>
-          <ion-option value="n63">ยาแปะ</ion-option>
-          <ion-option value="n63">ยาทา</ion-option>
+        <ion-select [(ngModel)]="userData.drug_type">
+          <ion-option value="ยาเม็ด">ยาเม็ด</ion-option>
+          <ion-option value="ยาน้ำ">ยาน้ำ</ion-option>
+          <ion-option value="ยาแปะ">ยาแปะ</ion-option>
+          <ion-option value="ยาทา">ยาทา</ion-option>
         </ion-select>
       </ion-item>
 
       <ion-item>
           <ion-label fixed>ชื่อยา</ion-label>
-          <ion-input type="text" value=""></ion-input>
+          <ion-input [(ngModel)]="userData.drug_name" type="text"></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label>เวลาทานยา</ion-label>
-            <ion-select [(ngModel)]="drug">
-              <ion-option value="nes">ก่อนอาหาร 15 นาที</ion-option>
-              <ion-option value="n65">ก่อนอาหาร 30 นาที</ion-option>
-              <ion-option value="n65">ก่อนอาหาร 1 ชั่วโมง</ion-option>
-              <ion-option value="n65">หลังอาหาร 15 นาที</ion-option>
-              <ion-option value="n65">หลังอาหาร 30 นาที</ion-option>
-              <ion-option value="n65">หลังอาหาร 1 ชั่วโมง</ion-option>
+            <ion-select [(ngModel)]="userData.drug_alarm">
+              <ion-option value="ก่อนอาหาร 15 นาที">ก่อนอาหาร 15 นาที</ion-option>
+              <ion-option value="ก่อนอาหาร 30 นาที">ก่อนอาหาร 30 นาที</ion-option>
+              <ion-option value="ก่อนอาหาร 1 ชั่วโมง">ก่อนอาหาร 1 ชั่วโมง</ion-option>
+              <ion-option value="หลังอาหาร 15 นาที">หลังอาหาร 15 นาที</ion-option>
+              <ion-option value="หลังอาหาร 30 นาที">หลังอาหาร 30 นาที</ion-option>
+              <ion-option value="หลังอาหาร 1 ชั่วโมง">หลังอาหาร 1 ชั่วโมง</ion-option>
             </ion-select>
           </ion-item>
 
-          <ion-item>
-              <ion-label>ตั้งเวลาทานยา</ion-label>
-            </ion-item>
 
             <ion-item>
                 <ion-label>เวลาแจ้งเตือน</ion-label>
-                <ion-datetime displayFormat="HH:mm" [(ngModel)]="myDate"></ion-datetime>
+                <ion-datetime displayFormat="HH:mm" [(ngModel)]="userData.drug_time"></ion-datetime>
               </ion-item>
         
 
@@ -55,11 +52,11 @@
               
               <ion-item>
                   <ion-label>วันที่</ion-label>
-                  <ion-datetime displayFormat="DD/MMM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+                  <ion-datetime displayFormat="DD/MMM/YYYY" [(ngModel)]="userData.drug_date"></ion-datetime>
                 </ion-item>
           
 
-                <button ion-button color="secondary"> 
+                <button ion-button color="secondary" (click)="savee()"> 
                     บันทึกข้อมูล
               </button>
               <button ion-button color="danger" (click)="backhomee()">ยกเลิก</button>

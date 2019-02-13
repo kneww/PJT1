@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, Events,ModalController} from 'ionic-angular';
+import { NavController, Events,ModalController, NavParams} from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { Platform } from 'ionic-angular';
 import {InfouserPage} from '../infouser/infouser';
@@ -10,7 +10,12 @@ import { P5Page } from '../p5/p5';
 import { P6Page } from '../p6/p6';
 import { P8Page } from '../p8/p8';
 import { P7Page } from '../p7/p7';
+import { ShowmePage } from '../showme/showme';
+import { ShowdrugPage } from '../showdrug/showdrug';
+import { ShowdocPage } from '../showdoc/showdoc';
+import { GamedocPage } from '../gamedoc/gamedoc';
 import { MapPage } from '../map/map';
+
 @Component({
   selector: 'page-sn1',
   templateUrl: 'sn1.html'
@@ -28,12 +33,16 @@ export class SN1 {
  // isSec1Enable:boolean
  // isSec2Enable:boolean
  // isSec3Enable:boolean
- // stepCondition:boolean 
+ // stepCondition:boolean
+ getParam:any;
 
   musicAlertOpts: { title: string, subTitle: string };
 
-  constructor(public navCtrl: NavController, private events:Events,private modal: ModalController) {
-   // this.stepCondition = true;
+  constructor(public navparam:NavParams, public navCtrl: NavController, private events:Events,private modal: ModalController) {
+   this.getParam = navparam.data
+   console.log("sn1:"+this.getParam);
+   
+    // this.stepCondition = true;
    // this.isSec1Enable =  true
    // this.isSec2Enable =  false
    // this.isSec3Enable =  false
@@ -67,16 +76,16 @@ export class SN1 {
     convert.present();
   }
   info(){
-    this.navCtrl.push(InfouserPage);
+    this.navCtrl.push(ShowmePage);
   }
   p2(){
     this.navCtrl.push(P2Page);
   }
-  p3(){
-    this.navCtrl.push(P3Page);
+  showdrug(){
+    this.navCtrl.push(ShowdrugPage);
   }
-  p4(){
-    this.navCtrl.push(P4Page);
+  showdoc(){
+    this.navCtrl.push(ShowdocPage);
   }
   p5(){
     this.navCtrl.push(P5Page);
@@ -90,7 +99,7 @@ export class SN1 {
   p8(){
     this.navCtrl.push(P8Page);
   }
- ma(){
+ map(){
    this.navCtrl.push(MapPage);
  }
 

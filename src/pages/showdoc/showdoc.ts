@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
+import { AuthServiceProvider } from '../../providers/auth-service';
 import { P4Page } from '../p4/p4';
 
 /**
@@ -15,14 +17,58 @@ import { P4Page } from '../p4/p4';
   templateUrl: 'showdoc.html',
 })
 export class ShowdocPage {
+  items:any;
+  public resposeData:any;
+  public data:any;
+  userData = {
+    "id_datdoc": '',
+    "name_hospital": "",
+    "name_docter":"", 
+    "dat_date": "",
+    "dat_time": ""
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  };
+  userDatap = {
+    "id_patient": "",
+    "id_doctor": ""
+};
+  userDetails = { "user_id": "" };
+  public sid:any;
+
+  constructor(public app: App,public storage:Storage,public authService: AuthServiceProvider, public navCtrl: NavController, public navParams: NavParams) {
+    this.storage.get('userData').then((val) =>{
+     var val = JSON.parse(val);
+     this.userDetails.user_id = val;
+     this.sid = this.userDetails.user_id;
+      console.log('ionViewDidLoa  d ShowdocPageconStuc');
+        this.showdoc();
+     });
+    }
+    ionViewWillEnter(){
+      console.log('ionViewWillEnter ShowdocPage');
+      this.showdoc();
+    }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ShowdocPage');
   }
   gotop4(){
     this.navCtrl.push(P4Page);
+  }
+  showdoc(){
+    this.userDatap.id_patient=this.sid;
+    this.authService.PostData(this.userDatap, "getdatdoc").then((result)=>{
+      this.resposeData = result;
+      console.log(result)
+      if (this.resposeData.pattient) {
+       this.data = this.resposeData.pattient; 
+        this.items =this.data;
+      }
+     else {
+        console.log(this.resposeData, "not conn");
+     }
+    }, (err) => {
+      console.error(err);
+    });
   }
 }

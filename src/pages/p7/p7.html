@@ -7,12 +7,23 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>เกมฝึกสมอง</ion-title>
+    <ion-title>เกมส์ฝึกสมอง</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding class="bg-image">
-
+<ion-content>
+    <ion-content padding>
+        <ion-card *ngFor="let xs of items">
+          <ion-card-header> ชื่อเกมส์ :
+           {{ xs.game_name }}
+          </ion-card-header>
+          <ion-card-content> รายละเอียด :
+            {{ xs.game_detail }}
+          </ion-card-content>
+          <ion-card-content> ลิงค์เกมส์ :
+            {{ xs.game_link }}
+          </ion-card-content>
+        </ion-card>
 </ion-content>

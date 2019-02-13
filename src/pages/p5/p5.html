@@ -14,21 +14,12 @@
 
 
 <ion-content padding>
-    <ion-card>
-
-        <ion-item>
-          <ion-avatar item-start>
-            <img src="../../assets/imgs/person.png">
-          </ion-avatar>
-          <h2>Marty McFly</h2>
-          <p>November 5, 1955</p>
-        </ion-item>
-      
-        <img src="../../assets/imgs/person.png">
-      
-        <ion-card-content>
-          <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
-        </ion-card-content>
-
-        </ion-card>
+  <ion-card *ngFor="let xa of items" style="height: 150px; background-color: rgb(161, 211, 240)"> 
+    <ion-card-header style="font-size: 20px" color="dark"> หัวข้อ :
+     <p>{{ xa.topic }}</p>
+    </ion-card-header>
+    <ion-card-content color="dark"> รายละเอียด :
+      <p>{{ xa.detail }}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

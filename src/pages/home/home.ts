@@ -29,6 +29,7 @@ export class HomePage {
   };
    public LoginID:any;
    public profile:any;
+   userParam:any;
   constructor(private storage:Storage ,public app: App, public navCtrl: NavController ,public authService:AuthServiceProvider ,public toastCtrl:ToastController , public navParams: NavParams,public menu : MenuController,private modal: ModalController,public loadingCtrl: LoadingController) {
     menu.enable(true);
   }
@@ -57,7 +58,7 @@ export class HomePage {
             this.LoginID=this.profile[0].id_patient;
             this.storage.set("userdata",  this.LoginID);
               //localStorage.setItem('userdata', JSON.stringify(this.resposeData))
-              this.navCtrl.push(SN1);
+              this.navCtrl.push(SN1,this.resposeData.patient);
            
           }else{
             this.presentToast("กรุณาตรวจสอบชื่อผู้ใช้งานเเละรหัสผ่านให้ถูกต้อง");

@@ -30,7 +30,8 @@ export class RegisterPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public authService:AuthServiceProvider,public toastCtrl:ToastController) {
   }
   register(){
-    if(this.userData.name && (this.userData.password==this.userData.confirmPassword) && this.userData.username && this.userData.email){
+    if(this.userData.name && (this.userData.password==this.userData.confirmPassword) 
+    && this.userData.username && this.userData.email){
      
      this.authService.PostData(this.userData, "register").then((result) =>{
        this.resposeData = result;

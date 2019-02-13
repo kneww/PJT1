@@ -3,10 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-
 import { MyApp } from './app.component';
-
-
 import { SN1 } from '../pages/sn1/sn1';
 import { HomePage } from '../pages/home/home';
 import {InfouserPage} from '../pages/infouser/infouser';
@@ -17,19 +14,29 @@ import { P5Page } from '../pages/p5/p5';
 import { P6Page } from '../pages/p6/p6';
 import { P7Page } from '../pages/p7/p7';
 import { P8Page } from '../pages/p8/p8';
+import { InputgamePage } from '../pages/inputgame/inputgame';
 import { RegisterPage } from '../pages/register/register';
 import { ShowmePage } from '../pages/showme/showme';
 import { CreatethemePage } from '../pages/createtheme/createtheme';
 import { ResultsymPage } from '../pages/resultsym/resultsym';
 import { ShowdrugPage } from '../pages/showdrug/showdrug';
+import { SearchPage } from '../pages/search/search';
+import { GamedocPage } from '../pages/gamedoc/gamedoc';
+import { ListpatPage } from '../pages/listpat/listpat';
+import { HttpClientModule } from '@angular/common/http';
 import { GoogleMapComponent } from '../components/google-map/google-map';
 import { AuthServiceProvider } from '../providers/auth-service';
 import { HttpModule } from '@angular/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { ShowdocPage } from '../pages/showdoc/showdoc';
 import { MenudoctorPage } from '../pages/menudoctor/menudoctor';
-import { ForgotpassPage } from '../pages/forgotpass/forgotpass';
 import { MapPage } from '../pages/map/map';
+import { ForgotpassPage } from '../pages/forgotpass/forgotpass';
+import { StorydocPage } from '../pages/storydoc/storydoc';
+import { CreatstoryPage } from '../pages/creatstory/creatstory';
+import { EditstoryPage } from '../pages/editstory/editstory';
+import { QapostPage } from '../pages/qapost/qapost';
+
 
 @NgModule({
   declarations: [
@@ -52,6 +59,14 @@ import { MapPage } from '../pages/map/map';
     ShowdocPage,
     MenudoctorPage,
     ForgotpassPage,
+    SearchPage,
+    GamedocPage,
+    InputgamePage,
+    ListpatPage,
+    StorydocPage,
+    CreatstoryPage,
+    EditstoryPage,
+    QapostPage,
     GoogleMapComponent,
     MapPage
   
@@ -59,7 +74,9 @@ import { MapPage } from '../pages/map/map';
   ],
   imports: [
     BrowserModule,HttpModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),IonicStorageModule.forRoot()
+
  
   ],
   bootstrap: [IonicApp],
@@ -83,6 +100,14 @@ import { MapPage } from '../pages/map/map';
     ShowdocPage,
     MenudoctorPage,
     ForgotpassPage,
+    SearchPage,
+    GamedocPage,
+    InputgamePage,
+    ListpatPage,
+    StorydocPage,
+    CreatstoryPage,
+    EditstoryPage,
+    QapostPage,
     MapPage
     
   ],

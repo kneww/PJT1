@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>ตารางหมอนัด</ion-title>
+    <ion-title>เวลาหมอนัด</ion-title>
     <ion-buttons right (click)="gotop4()">
       <button ion-button icon-only outline color="dark">
         <ion-icon ios="ios-add" md="md-add"></ion-icon>
@@ -18,6 +18,19 @@
 </ion-header>
 
 
-<ion-content padding>
-
+  <ion-content padding>
+    <ion-card *ngFor="let xs of items">
+      <ion-card-header> โรงพยาบาล :
+       {{ xs.name_hospital }}
+      </ion-card-header>
+      <ion-card-content> ชื่อคุณหมอ :
+        {{ xs.name_docter }}
+      </ion-card-content>
+      <ion-card-content> วันที่ :
+        {{ xs.dat_date }}
+      </ion-card-content>
+      <ion-card-content> เวลานัด :
+        {{ xs.dat_time }}
+      </ion-card-content>
+    </ion-card>
 </ion-content>

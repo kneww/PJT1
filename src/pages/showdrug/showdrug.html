@@ -19,5 +19,21 @@
 
 
 <ion-content padding>
-
+    <ion-card *ngFor="let xa of items">
+        <ion-card-header> ประเภท :
+         {{ xa.drug_type }}
+        </ion-card-header>
+        <ion-card-content> ชื่อยา :
+          {{ xa.drug_name }}
+        </ion-card-content>
+        <ion-card-content> เวลาทานยา :
+          {{ xa.drug_alarm }}
+        </ion-card-content>
+        <ion-card-content> เวลาแจ้งเตือน :
+          {{ xa.drug_time }}
+          </ion-card-content>
+        <ion-card-content> วันที่ :
+          {{ xa.drug_date }}
+        </ion-card-content>
+      </ion-card>
 </ion-content>

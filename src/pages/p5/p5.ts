@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
+import { AuthServiceProvider } from '../../providers/auth-service';
+
 
 /**
  * Generated class for the P5Page page.
@@ -15,11 +18,56 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class P5Page {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad P5Page');
   }
+  items:any;
+  public resposeData:any;
+  public data:any;
+  userData = {
+    "id_story": '',
+    "id_doctor": "",
+    "date":"", 
+    "topic": "",
+    "detail": "",
+    "status_story":""
+  };
+  userDatap = {
+    "id_patien": ""
+  };
+  userDetails = { "user_id": "" };
+  public sid:any;
+
+  constructor(public app: App,public storage:Storage,public authService: AuthServiceProvider, public navCtrl: NavController, public navParams: NavParams) {
+  this.storage.get('userData').then((val) =>{
+   var val = JSON.parse(val);
+   this.userDetails.user_id = val;
+   this.sid = this.userDetails.user_id;
+    console.log('ionViewDidLoad p5Stuc');
+      this.showStory();
+   });
+  }
+  ionViewWillEnter(){
+    console.log('ionViewWillEnter p5Page');
+    this.showStory();
+  }
+  showStory(){
+    this.userDatap.id_patien=this.sid;
+    this.authService.PostData(this.userDatap, "gettoppic").then((result)=>{
+      this.resposeData = result;
+      console.log(result)
+      if (this.resposeData.pattient) {
+       this.data = this.resposeData.pattient; 
+        this.items =this.data;
+      }
+     else {
+        console.log(this.resposeData, "not conn");
+     }
+    }, (err) => {
+      console.error(err);
+    });
+  }
+
+  
 
 }
